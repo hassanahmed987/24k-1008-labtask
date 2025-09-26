@@ -10,7 +10,7 @@ void playGame(int target, int player, int totalPlayers) {
     cin >> guess;
 
     if (guess == target) {
-        cout << "🎉 Player " << player << " wins! The number was " << target << ".\n";
+        cout << "?? Player " << player << " wins! The number was " << target << ".\n";
         return; 
     } 
     else if (guess < target) {
@@ -21,18 +21,18 @@ void playGame(int target, int player, int totalPlayers) {
     }
 
     int nextPlayer = (player % totalPlayers) + 1;
-    playGame(target, nextPlayer, totalPlayers); // Recursive call
+    playGame(target, nextPlayer, totalPlayers); 
 }
 
 int main() {
     srand(time(0));  
-    int target = rand() % 100 + 1; // Random number between 1 and 100
+    int target = rand() % 100 + 1;
 
     int totalPlayers;
     cout << "Enter number of players: ";
     cin >> totalPlayers;
 
     cout << "\n--- Guess the Number Game ---\n";
-    playGame(target, 1, totalPlayers); // Start with player 1
+    playGame(target, 1, totalPlayers); 
     return 0;
 }
